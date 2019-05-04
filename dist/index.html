@@ -2,12 +2,31 @@
 <html lang="en">
     <head>
         <meta http-equiv="Content-type" content="text/html;utf-8">
+        <link rel="manifest" href="/manifest.json">
+        <!-- IOS -->
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-title" content="Jisho GKI">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="Description" content="A progressive web-app for memoring Japanese vocabulary.">
+
         <title>Jisho Progressive Webapp</title>
     </head>
     <body>
         <h1>Get Started Learning Japanese</h1>
         <table border="1" id="dataTable"></table>
         <script src="main.js"></script>
+        <script>
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('/service-worker.js')
+                        .then((reg) => {
+                            console.log('Service worker registered', reg);
+                        })
+                })
+            }
+        </script>
     </body>
 </html>
 
