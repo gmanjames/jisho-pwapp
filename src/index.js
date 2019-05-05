@@ -12,7 +12,7 @@ function display() {
         ${tableHeader}
         <tbody>
             ${jishoData.words[0]['1-36'].map((word) => {
-                return wire()`
+                return wire(word)`
                     <tr>
                         <td>${word.kanji}</td>
                         <td>${word.pronun}</td>
