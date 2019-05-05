@@ -1,5 +1,3 @@
-'use strict';
-
 const CACHE_NAME = 'jisho-cache-v1';
 
 let urlsToCache = [
